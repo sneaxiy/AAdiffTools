@@ -183,6 +183,7 @@ class Matrix {
     std::vector<float> out(height_ * width_);
     resource.SyncStream();
     CUDA_CHECK(cudaMemcpyAsync(out.data(), data_, nbytes, cudaMemcpyDeviceToHost, resource.stream)); 
+    resource.SyncStream();
     return out;
   }
 
