@@ -248,6 +248,8 @@ std::vector<std::vector<int>> FindEqualGroup(const std::vector<std::vector<T>> &
       if (is_equal) {
         result[first_value].insert(*iter); 
         iter = left.erase(iter);
+      } else {
+        ++iter;
       }
     } 
   } 
